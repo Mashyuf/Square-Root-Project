@@ -1,5 +1,7 @@
 const fs = require('node:fs');
-const states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI"];
+const states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI","IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD",
+    "ME", "MI", "MN", "MO", "MT", "MS", "NE", "NH", "NJ", "NV", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN",
+    "TX", "UT", "VT", "DC", "WA", "WV", "WI", "WY", "VA"];
 
 try {
     const template = fs.readFileSync('template.geojson', 'utf8');
