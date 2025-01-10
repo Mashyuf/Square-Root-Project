@@ -1,5 +1,5 @@
 const fs = require('node:fs');
-const states = ["AL", "AK", "AZ"];
+const states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI"];
 
 try {
     const template = fs.readFileSync('template.geojson', 'utf8');
@@ -20,8 +20,6 @@ try {
     console.log(err);
 }
 
-
-
 function cleanGeoJson(file, location) {
     try {
         const data = fs.readFileSync(file, 'utf8');
@@ -30,7 +28,8 @@ function cleanGeoJson(file, location) {
         const rootFolder = jObj.features;
         for(let i = 0; i < rootFolder.length; i++) {
             let districtProperties = rootFolder[i].properties;
-            districtProperties= Object.assign(districtProperties, {fill: districtProperties.color, 'fill-opacity': '0.7'});
+            districtProperties= Object.assign(districtProperties, {fill: districtProperties.color, 'fill-opacity': '0.7', stroke: '#919191',
+                'stroke-opacity': '0.8', 'stroke-width': '1.5'});
 
             delete districtProperties.color;
             delete districtProperties.opacity;
